@@ -17,6 +17,6 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
     @Query(nativeQuery = true, value = "select b.*\n" +
             "from board b\n" +
             "where b.work_space_id = :workspaceId and b.is_deleted=false\n" +
-            "  and exists(select t from workspace_member t where t.workspace_id = :workspaceId and t.member_id = :userId);")
+            "  and exists(select t from board_member t where t.board_id = b.id and t.member_id = :userId);")
     List<Board> findAllByFalse(@Param(value = "userId") Long userId, @Param(value = "workspaceId") Long workspaceId);
 }

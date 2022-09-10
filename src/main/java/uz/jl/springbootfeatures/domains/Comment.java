@@ -29,7 +29,7 @@ public class Comment{
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     private Task task;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     private AuthUser authUser;
 
 }

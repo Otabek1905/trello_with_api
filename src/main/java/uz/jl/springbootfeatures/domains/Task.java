@@ -36,8 +36,8 @@ public class Task extends Auditable{
     private List<AuthUser> users;
 
     @Builder(builderMethodName = "childBuilder")
-    public Task(Long createdBy, LocalDateTime createdAt, boolean isDeleted, Long id, String title, String description) {
-        super(createdBy, createdAt, isDeleted);
+    public Task(Long createdBy,Long id, String title, String description) {
+        super(createdBy, LocalDateTime.now(), false);
         this.id = id;
         this.title = title;
         this.description = description;

@@ -63,4 +63,5 @@ public class WorkSpace extends Auditable {
         this.workspaceStatus = workspaceStatus;
         this.authUsers = new ArrayList<>();
     }
+
 }
